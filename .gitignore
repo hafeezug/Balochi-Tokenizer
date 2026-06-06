@@ -1,0 +1,94 @@
+# ==============================================================================
+# Python / Machine Learning .gitignore for Balochi Tokenizer Project
+# ==============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ==============================================================================
+# NLP / Machine Learning Specific Ignores
+# ==============================================================================
+# If your raw text corpora (e.g. balochi_dedup_corpus.txt) are extremely large (>100MB)
+# uncomment the following lines to prevent them from being pushed (or use Git LFS).
+# *.txt
+# *.jsonl
+# *.csv
+
+# Large Model weights (Uncomment if you don't want to push model weights)
+# *.safetensors
+# *.bin
+# *.h5
+# *.pb
+# *.onnx
+# *.pt
+# *.ckpt
+
+# HuggingFace cache and local saves
+.cache/
+.huggingface/
+# You usually DO want to push tokenizer.json, vocab.json, merges.txt, etc.
+# but you might want to ignore intermediate model checkpoints:
+# checkpoint-*/
+
+# Logs
+logs/
+*.log
