@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔤 Balochi Tokenizer Training
+# 🔤 Balochi Tokenizers Training
 ### From Corpus Construction to Entropy-Driven Pruning
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
