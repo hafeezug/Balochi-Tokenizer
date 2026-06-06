@@ -7,7 +7,7 @@
 [![Models Evaluated](https://img.shields.io/badge/Models%20Evaluated-27-green.svg)]()
 [![Language](https://img.shields.io/badge/Language-%20Balochi-orange.svg)]()
 [![HuggingFace](https://img.shields.io/badge/🤗HuggingFace-%20balochitokenizers-yellow.svg)](https://huggingface.co/hafeez007/balochi-tokenizers)
-[![University](https://img.shields.io/badge/University%20of%20Gwadar-CS%20Dept-purple.svg)]()
+[![University](https://img.shields.io/badge/University%20of%20Gwadar-CS%20Dept-purple.svg)](https://ug.edu.pk/department/Computer%20Science)
  
  **Total Models Evaluated:** 27 (15 primary cross-lingual + 12 ablation)  
 ---
