@@ -9,12 +9,13 @@
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-balochiml-yellow.svg)](https://huggingface.co/balochiml)
 [![University](https://img.shields.io/badge/University%20of%20Gwadar-CS%20Dept-purple.svg)]()
 
-**Principal Researcher:** Hafeez Ullah · **Artificial Intelligence and Data Innovation Research Lab (AIDIRL), University of Gwadar/ Video Survilliance Lab, National University of Computer and Emerging Sciences(NUCES-FAST), Karachi**  
+**Principal Researcher:** Hafeez Ullah · **Artificial Intelligence and Data Innovation Research Lab (AIDIRL), University of Gwadar/
+Video Survilliance Lab, National University of Computer and Emerging Sciences(NUCES-FAST), Karachi**  
  **Total Models Evaluated:** 27 (15 primary cross-lingual + 12 ablation)  
 ---
 
 ### ⭐ Final Production Model: `Balochi_SP_47K`
-*SentencePiece · 47,000 vocabulary · AraToken-normalized · Entropy-pruned*
+*SentencePiece · 47,000 vocabulary
 
 </div>
 
