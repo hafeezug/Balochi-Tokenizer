@@ -1,7 +1,6 @@
 <div align="center">
 
-# 🔤 Balochi Tokenizer Optimization Pipeline
-
+# 🔤 Balochi Tokenizer Training
 ### From Corpus Construction to Entropy-Driven Pruning
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -11,9 +10,7 @@
 [![University](https://img.shields.io/badge/University%20of%20Gwadar-CS%20Dept-purple.svg)]()
 
 **Principal Researcher:** Hafeez Ullah · **Artificial Intelligence and Data Innovation Research Lab (AIDIRL), University of Gwadar/ Video Survilliance Lab, National University of Computer and Emerging Sciences(NUCES-FAST), Karachi**  
-**Report Date:** June 6, 2026 · **Total Models Evaluated:** 27 (15 primary cross-lingual + 12 ablation)  
-**Evaluation Corpus:** `liberal capitalism.txt` & `Balochi Labzank.txt`
-
+ **Total Models Evaluated:** 27 (15 primary cross-lingual + 12 ablation)  
 ---
 
 ### ⭐ Final Production Model: `Balochi_SP_47K`
