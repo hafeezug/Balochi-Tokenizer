@@ -11,7 +11,7 @@
  
  **Total Models Evaluated:** 27 (15 primary cross-lingual + 12 ablation)  
 ---
-### Artificial Intelligence and Data Innovation Research Lab (AIDIRL), University of Gwadar
+### Artificial Intelligence and Data Innovation Research Lab (AIDIRL), Department of Computer Science, University of Gwadar
 ### ⭐ Final Production Model: `Balochi_SP_47K`
 *SentencePiece · 47,000 vocabulary
 
