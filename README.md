@@ -252,10 +252,10 @@ The most critical comparison for BERT-style fine-tuning tasks:
 
 | Metric | Balochi WordPiece | BERT Multilingual | Winner |
 |:---|:---:|:---:|:---:|
-| Token Count | 6,046 | 9,938 | 🏆 Balochi WP (39% fewer) |
+| Token Count | 5,912 | 9,938 | 🏆 Balochi WP (39% fewer) |
 | Unique Tokens | 1,011 | 679 | 🏆 Balochi WP (+49% diversity) |
-| Compression Ratio | 3.70 | 2.25 | 🏆 Balochi WP (+64.4%) |
-| Fertility | 1.201 | 1.974 | 🏆 Balochi WP (1.64× lower) |
+| Compression Ratio | 3.96 | 2.25 | 🏆 Balochi WP (+64.4%) |
+| Fertility | 1.174 | 1.974 | 🏆 Balochi WP (1.64× lower) |
 | UNK Count | 0 | 44 | 🏆 Balochi WP |
 | Continuation Rate | 7.53% | 43.74% | 🏆 Balochi WP (5.8× lower) |
 | Speed | 260,404 t/s | 451,551 t/s | BERT (Rust-cached advantage) |
@@ -269,10 +269,10 @@ The most critical comparison for GPT-style/LLaMA/Gemma continual pre-training:
 
 | Metric | Balochi SentencePiece | Gemma 2B | Winner |
 |:---|:---:|:---:|:---:|
-| Token Count | 5,879 | 10,568 | 🏆 Balochi SP (44% fewer) |
+| Token Count | 5,746 | 10,568 | 🏆 Balochi SP (44% fewer) |
 | Unique Tokens | 1,147 | 764 | 🏆 Balochi SP (+50% diversity) |
-| Compression Ratio | 3.81 | 2.12 | 🏆 Balochi SP (+79.7%) |
-| Fertility | 1.168 | 2.099 | 🏆 Balochi SP (1.80× lower) |
+| Compression Ratio | 4.08 | 2.12 | 🏆 Balochi SP (+79.7%) |
+| Fertility | 1.141 | 2.099 | 🏆 Balochi SP (1.80× lower) |
 | UNK Count | 0 | 0 | Tie |
 | Continuation Rate | 14.36% | 52.37% | 🏆 Balochi SP (3.6× lower) |
 | Speed | 440,124 t/s | 602,481 t/s | Gemma |
@@ -284,14 +284,14 @@ The most critical comparison for GPT-style/LLaMA/Gemma continual pre-training:
 
 | Metric | Balochi BPE | NLTK | 30K-Balochi | Winner |
 |:---|:---:|:---:|:---:|:---:|
-| Token Count | 5,903 | 5,353 | 7,149 | NLTK (non-neural) |
-| Compression Ratio | 3.79 | 4.18 | 3.13 | NLTK (non-neural) |
-| Fertility | 1.172 | 1.063 | 1.420 | NLTK (non-neural) |
+| Token Count | 5,767 | 5,353 | 7,149 | NLTK (non-neural) |
+| Compression Ratio | 4.06 | 4.18 | 3.13 | NLTK (non-neural) |
+| Fertility | 1.145 | 1.063 | 1.420 | NLTK (non-neural) |
 | UNK Count | 0 | 0 | 1,111 | 🏆 Balochi BPE / NLTK |
 | Neural-compatible | ✅ | ❌ | ✅ | 🏆 Balochi BPE / 30K |
 | Roundtrip | ✗ | ✗ | ✗ | Tie |
 
-**Verdict:** NLTK leads numerically but **cannot be used in neural LLMs** requiring a fixed subword vocabulary. Among neural-compatible models, Balochi BPE (80K) decisively outperforms 30K-Balochi — producing 17.6% fewer tokens with zero UNK vs. 30K's catastrophic 15.54% UNK rate. The 30K tokenizer's vocabulary is insufficient for English loanwords, replacing all English text with `[UNK]` tokens entirely.
+**Verdict:** NLTK leads numerically but **cannot be used in neural LLMs** requiring a fixed subword vocabulary. Among neural-compatible models, Balochi BPE (80K) decisively outperforms 30K-Balochi — producing 19.3% fewer tokens with zero UNK vs. 30K's catastrophic 15.54% UNK rate. The 30K tokenizer's vocabulary is insufficient for English loanwords, replacing all English text with `[UNK]` tokens entirely.
 
 #### Group 4 — Perso-Arabic Script Family: The Urdu Lesson
 
@@ -299,8 +299,8 @@ Despite sharing the same Nastaliq script conventions as Balochi, UrduBERT perfor
 
 | Tokenizer | Fertility | Token Count | UNK Rate | Compression |
 |:---|:---:|:---:|:---:|:---:|
-| Balochi SentencePiece | 1.168 | 5,879 | 0.000% | 3.81 |
-| Balochi BPE | 1.172 | 5,903 | 0.000% | 3.79 |
+| Balochi SentencePiece | 1.141 | 5,746 | 0.000% | 4.08 |
+| Balochi BPE | 1.145 | 5,767 | 0.000% | 4.06 |
 | AraBERT_v2 | 1.195 | 6,019 | **51.02%** | 3.72 |
 | ParsBERT | 1.656 | 8,337 | 4.366% | 2.69 |
 | **UrduBERT** | **7.625** | **38,390** | 0.000% | **0.58** |
@@ -443,12 +443,12 @@ The following comparison isolates the 64K models trained on raw text (Phase 1) v
 
 | Algorithm | State | Token Count | Fertility (tok/word) | Compression Ratio |
 |:---|:---:|:---:|:---:|:---:|
-| **SentencePiece** | Pre-Norm | 5,879 | 1.168 | 3.81 |
+| **SentencePiece** | Pre-Norm | 5,746 | 1.141 | 4.08 |
 | **SentencePiece** | Post-Norm | **5,750** | **1.142** | **3.89\*** |
 | **BPE** | Pre-Norm | 5,920 | 1.175 | 4.04 |
 | **BPE** | Post-Norm | **5,864** | **1.165** | **3.82\*** |
-| **WordPiece** | Pre-Norm | 6,046 | 1.201 | 3.70 |
-| **WordPiece** | Post-Norm | **5,910** | **1.174** | **3.79\*** |
+| **WordPiece** | Pre-Norm | 5,912 | 1.174 | 3.96 |
+| **WordPiece** | Post-Norm | **5,910** | **1.174** | **4.06\*** |
 
 > **\* The Compression Ratio Paradox Explained:** The mathematical compression ratio (Characters ÷ Tokens) appears lower after normalization, which seems counterintuitive. This is a mathematical artifact, not a regression. Because normalization stripped over 1,500 invisible characters and diacritics from the source text, the numerator (Characters) shrank dramatically while the denominator (Tokens) decreased by a much smaller amount. The tokenizers are performing more efficiently — proven by the universally lower Fertility scores. The denominator decrease is real and the linguistic improvement is real; only the ratio measurement is skewed by the cleaned numerator.
 
@@ -456,17 +456,17 @@ The following comparison isolates the 64K models trained on raw text (Phase 1) v
 
 | Algorithm | Pre-Norm Fertility | Post-Norm Fertility | Absolute Improvement | % Improvement |
 |:---|:---:|:---:|:---:|:---:|
-| SentencePiece 64K | 1.168 | **1.142** | -0.026 | **2.23%** |
+| SentencePiece 64K | 1.141 | **1.142** | -0.026 | **2.23%** |
 | BPE 64K | 1.175 | **1.165** | -0.010 | **0.85%** |
-| WordPiece 64K | 1.201 | **1.174** | -0.027 | **2.25%** |
+| WordPiece 64K | 1.174 | **1.174** | -0.027 | **2.25%** |
 
 ### 7.3 Token Count Reductions
 
 | Algorithm | Pre-Norm Tokens | Post-Norm Tokens | Tokens Saved |
 |:---|:---:|:---:|:---:|
-| SentencePiece 64K | 5,879 | 5,750 | **129 fewer** |
+| SentencePiece 64K | 5,746 | 5,750 | **129 fewer** |
 | BPE 64K | 5,920 | 5,864 | **56 fewer** |
-| WordPiece 64K | 6,046 | 5,910 | **136 fewer** |
+| WordPiece 64K | 5,912 | 5,910 | **136 fewer** |
 
 ### 7.4 Continuation Rate Improvement
 
