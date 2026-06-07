@@ -22,7 +22,7 @@ if sys.platform == "win32":
 # Import dependencies
 try:
     import numpy as np
-    from Tokenizers_Comparison_Extended import load_ablation_tokenizers, tokenize_text
+    from Tokenizers_Comparison import load_ablation_tokenizers, tokenize_text
 except ImportError as e:
     print(f"❌ Error importing dependencies: {e}")
     sys.exit(1)
@@ -37,8 +37,8 @@ OUTPUT_DIR = os.path.join(SCRIPT_DIR, "Output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 EVAL_TEXTS = [
-    os.path.join(BASE_DIR, "Sample Tokenized Text", "Tahir Hakim.txt"),
-    os.path.join(BASE_DIR, "Sample Tokenized Text", "liberal capitalism.txt"),
+    os.path.join(BASE_DIR, "..", "Tokens", "Tahir Hakim.txt"),
+    os.path.join(BASE_DIR, "..", "Tokens", "liberal capitalism.txt"),
 ]
 
 RENYI_ORDERS = [0, 0.5, 2, 3, 10, float('inf')]

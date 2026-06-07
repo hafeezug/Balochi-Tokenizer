@@ -52,13 +52,13 @@ os.makedirs(MODELS_DIR, exist_ok=True)
 
 CONFIG = {
     "CORPUS_FILES": [
-        os.path.join(BASE_DIR, "balochi_clean_corpus_dictionary.txt"),
-        os.path.join(BASE_DIR, "balochi_dedup_corpus.txt"),
-        os.path.join(BASE_DIR, "english_corpus_2M.txt"),
+        os.path.join(BASE_DIR, "..", "..", "Final Tokenizers", "balochi_clean_corpus_dictionary.txt"),
+        os.path.join(BASE_DIR, "..", "..", "Final Tokenizers", "balochi_dedup_corpus.txt"),
+        os.path.join(BASE_DIR, "..", "..", "Final Tokenizers", "english_corpus_2M.txt"),
     ],
     "VOCAB_SIZES": [32000, 47000, 64000, 80000, 128000],
     "ALGORITHMS": ["bpe", "wordpiece", "sentencepiece"],
-    "SKIP_EXISTING": True,
+    "SKIP_EXISTING": False,
     "SP_MODEL_TYPE": "unigram",
     "SP_CHARACTER_COVERAGE": 0.9995,
     "WP_MIN_FREQUENCY": 2,
@@ -88,7 +88,7 @@ def load_corpus_files(corpus_files):
     return existing_files
 
 def prepare_corpus_for_training(corpus_files, output_path):
-    from Tokenizers_Comparison_Extended import normalize_balochi
+    from Tokenizers_Comparison import normalize_balochi
     
     # We will force-recreate if it exists to ensure normalization is applied
     print(f"    Concatenating and Normalizing {len(corpus_files)} corpus files...")

@@ -89,15 +89,15 @@ from nltk.tokenize import word_tokenize
 
 SCRIPT_DIR    = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR      = SCRIPT_DIR
-INPUT_FILE    = os.path.join(BASE_DIR, "Sample Tokenized Text", "liberal capitalism.txt")
+INPUT_FILE    = os.path.join(BASE_DIR, "..", "Tokens", "liberal capitalism.txt")
 TOKENIZERS_DIR = os.path.join(BASE_DIR, "Tokenizers")
 OUTPUT_DIR    = os.path.join(SCRIPT_DIR, "Output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ── Balochi local models ─────────────────────────────────────
-BPE_80K  = os.path.join(TOKENIZERS_DIR, "Balochi_BPE_Tokenizer_80000.json")
-WP_64K   = os.path.join(TOKENIZERS_DIR, "Balochi_Word_Piece_Tokenizer_64000.json")
-SP_64K   = os.path.join(TOKENIZERS_DIR, "Balochi_Sentence_Piece_Tokenizer_64000.model")
+BPE_80K  = os.path.join(OUTPUT_DIR, "Ablation", "Models", "bpe_80000", "bpe_80000.json")
+WP_64K   = os.path.join(OUTPUT_DIR, "Ablation", "Models", "wordpiece_64000", "wordpiece_64000.json")
+SP_64K   = os.path.join(OUTPUT_DIR, "Ablation", "Models", "sentencepiece_64000", "sentencepiece_64000.model")
 
 # ── Ablation tokenizer paths (from notebook training) ────────
 ABLATION_MODELS = {
@@ -152,7 +152,7 @@ def normalize_balochi(text: str, drop_diacritics: bool = True, preserve_ye: bool
     text = text.replace('\u061C', '')              # ALM
 
     if drop_diacritics:
-        text = re.sub(r'[\u064B-\u065F\u0610-\u061A\u06D6-\u06DC]', '', text)
+        text = re.sub(r'(?<!ء)[\u064B-\u065F\u0610-\u061A\u06D6-\u06DC]', '', text)
 
     text = re.sub(r'\s+', ' ', text).strip()
     return text

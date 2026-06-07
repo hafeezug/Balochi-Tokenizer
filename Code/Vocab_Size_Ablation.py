@@ -20,7 +20,7 @@ if sys.platform == "win32":
 
 # Import core evaluation engine
 try:
-    from Tokenizers_Comparison_Extended import (
+    from Tokenizers_Comparison import (
         load_ablation_tokenizers,
         tokenize_text,
         compute_metrics
@@ -42,8 +42,8 @@ CONFIG = {
     "ALGORITHMS": ["bpe", "wordpiece", "sentencepiece"],
     "VOCAB_SIZES": [32000, 64000, 80000, 128000],
     "EVAL_TEXTS": [
-        os.path.join(BASE_DIR, "Sample Tokenized Text", "Tahir Hakim.txt"),
-        os.path.join(BASE_DIR, "Sample Tokenized Text", "liberal capitalism.txt"),
+        os.path.join(BASE_DIR, "..", "Tokens", "Tahir Hakim.txt"),
+        os.path.join(BASE_DIR, "..", "Tokens", "liberal capitalism.txt"),
     ],
 }
 
